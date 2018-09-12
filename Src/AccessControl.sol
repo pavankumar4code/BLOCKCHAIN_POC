@@ -182,8 +182,7 @@ contract AccessControlMethod_self{
 				if (_time - policies[resource][action].ToLR <= policies[resource][action].minInterval){
 					policies[resource][action].NoFR++;
 					if(policies[resource][action].NoFR >= policies[resource][action].threshold){
-				// 		penalty = jc.misbehaviorJudge(subject, object, _resource, _action, "Too frequent access!", _time);
-					    penalty = 1;
+					    	penalty = 1;
 						behaviorcheck = false;
 						behaviors[resource].TimeofUnblock = _time + penalty * 1 minutes;
 						behaviors[resource].mbs.push(Misbehavior(_resource, _action, "Too frequent access!", _time, penalty)); //problem occurs when using array
@@ -226,12 +225,3 @@ contract AccessControlMethod_self{
 	    }
 	}
 }
-
-    contract Judge{
-    	function misbehaviorJudge(address _subject, address _object, string _res, string _action, string _misbehavior, uint _time) public returns (uint );
-    }
-
-
-
-
-
