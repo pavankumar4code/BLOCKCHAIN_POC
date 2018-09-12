@@ -1,6 +1,6 @@
 pragma solidity ^0.4.0;
 
-contract AccessControlMethod_self{
+contract AccessControlMethod{
 	address public owner;
 	address public subject;
 	address public object;
